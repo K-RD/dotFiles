@@ -1,0 +1,19 @@
+[color]
+	ui = auto
+[user]
+	name = ROBIND KUMAR
+	email = kumarrobind386@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = warn
+[alias]
+	lg = "log --pretty=format:'%h [%an] %ad %s%d' --graph --date=short"
+	hist="log --pretty=format:'%h [%an] %s%d' --graph --date=short"
+	
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[push]
+	autoSetupRemote = true
