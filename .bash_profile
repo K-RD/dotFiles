@@ -1,4 +1,9 @@
 export PATH="/opt/homebrew/bin:$PATH"
+#exporting Java Path
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+
+
 #script from coding garden or https://github.com/w3cj/dotfiles/blob/master/.bash_profile
 HOST_NAME=stable
 
@@ -52,6 +57,7 @@ function mkcd()
 alias 🍺="git checkout -b drunk"
 alias a='code .'
 alias c='code .'
+#alias 'cd ...'='cd ../../' #not working
 alias reveal-md="reveal-md --theme night --highlight-theme hybrid --port 1337"
 alias ns='npm start'
 alias start='npm start'
@@ -60,6 +66,7 @@ alias run='npm run'
 alias nis='npm i -S'
 alias l="ls" # List files in current directory
 alias ll="ls -al" # List all files in current directory in long list format
+alias la="ls -a" #Lists all files in current directory in multiple column format 
 alias o="open ." # Open the current directory in Finder
 
 # ----------------------
