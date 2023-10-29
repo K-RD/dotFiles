@@ -46,6 +46,9 @@ PS1="$EMOJI >"
 
 fortune | cowsay -f tux
 
+#Uncomment below to print the version of all the installed apps. 
+#~/Developer/dotFiles/allAppVersion.sh
+
 function mkcd()
 {
   mkdir $1 && cd $1
