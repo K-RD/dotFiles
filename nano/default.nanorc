@@ -1,0 +1,8 @@
+## Default - makes ## as comment
+##include "/usr/share/nano/default.nanorc"
+ 
+syntax "default"
+color green "^#.*" 
+color brightgreen "^##.*"
+color yellow "^###.*"
+#color green "^[ \t]*#.*
