@@ -1,0 +1,27 @@
+# Enable syntax highlighting
+include "/Users/stable/dotFiles/nano/*.nanorc"
+
+# Use soft wrapping at 80 characters
+set nowrap
+
+## Use this tab size instead of the default; it must be greater than 0.
+set tabsize 4
+
+## Use auto-indentation.
+set autoindent
+ 
+## Convert typed tabs to spaces.
+# set tabstospaces
+
+# Enable smooth scrolling
+# set smooth
+
+# Display line numbers
+set linenumbers
+
+# Display matching parentheses
+set matchbrackets "(<[{)>]}"
+
+# Set a custom color theme (replace 'desert' with your preferred theme)
+#include "/Users/stable/dotFiles/nano-syntax-highlighting/desert.nanorc"
+
