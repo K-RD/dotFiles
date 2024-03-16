@@ -41,11 +41,11 @@ print_before_the_prompt () {
 }
 
 # neofetch is used to print the system information along with the apple logo
-neofetch
+# neofetch
 
-PROMPT_COMMAND=print_before_the_prompt
-PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
-PS1="$EMOJI >"
+# PROMPT_COMMAND=print_before_the_prompt
+# PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND"
+# PS1="$EMOJI >"
 
 # fortune | cowsay -f tux
 
@@ -85,12 +85,17 @@ alias ll="ls -al" # List all files in current directory in long list format
 alias la="ls -a" #Lists all files in current directory in multiple column format 
 alias o="open ." # Open the current directory in Finder
 alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
-
+alias dw="cd ~/Downloads"
+alias dv="cd ~/developer"
 
 # ----------------------
 # Python Aliases
 # ----------------------
 alias python='python3'
+alias py='python3'
+alias pip='pip3'
+
+
 
 
 # ----------------------
