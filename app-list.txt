@@ -1,0 +1,51 @@
+Android File Transfer.app
+Android Studio.app
+AnyDesk.app
+Arc.app
+Bandwidth+.app
+Brave Browser.app
+CapCut.app
+CopyClip.app
+DevToys.app
+Discord.app
+Docker.app
+Elmedia Video Player.app
+Figma.app
+Figr.app
+Firefox Developer Edition.app
+GitKraken.app
+Google Chrome.app
+IntelliJ IDEA.app
+JDownloader 2 Installer.app
+JDownloader2.app
+JetBrains Toolbox.app
+Logseq.app
+MongoDB Compass.app
+NCalc.app
+Notion.app
+Obsidian.app
+OneMenu.app
+PastePal.app
+Postman.app
+PyCharm.app
+Safari.app
+Skype.app
+Slack.app
+Sublime Merge.app
+Sublime Text.app
+Telegram.app
+Toggl Track.app
+Tower.app
+Trello.app
+Utilities
+VLC.app
+Visual Studio Code.app
+Visual Studio.app
+Warp.app
+WebStorm.app
+WhatsApp.localized
+XAMPP
+Xcode.app
+Zed.app
+iMovie.app
+iTerm.app
