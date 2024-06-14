@@ -1,3 +1,15 @@
 .DS_Store
 .idea
-
+.npm
+.ssh
+.zsh_history
+.bash_histor.npm
+.ssh
+.zsh_history
+.bash_history
+.config/gh/hosts.yml
+.bash_sessions
+.bash_sessions
+.nvm
+.python_history
+.emulator_console_auth_token

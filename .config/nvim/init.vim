@@ -28,9 +28,9 @@ set hlsearch
 set smartcase " auto switch to case sensitive search
 
 
-" set tab width to 4 spaces
-set tabstop=4
-set shiftwidth=4
+" set tab width to 2 spaces
+set tabstop=2
+set shiftwidth=2
 set expandtab
 
 " Use Neovim's default register for yanking
