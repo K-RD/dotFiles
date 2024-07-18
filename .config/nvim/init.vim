@@ -1,41 +1,45 @@
-" Enable syntax highlighting
-syntax enable
-
-" Show line number
+set scrolloff=8
 set number
-
-" show relative line number
 set relativenumber
-
-" set number width default 4
-set numberwidth=4
-
-" Adjust relative number offset
-set signcolumn=auto " Always show the signcolumn, otherwise it would shift the numbers by one to the right
-
-" Highlight the current line
-set cursorline
-
-" Highlight the cursor line number
-set cursorcolumn
-
-" Auto indentation for code formatting
-set autoindent
-
-" highlight search result
-set hlsearch
-" set ignorecase " to ignore case in search
-set smartcase " auto switch to case sensitive search
-
-
-" set tab width to 2 spaces
-set tabstop=2
-set shiftwidth=2
+set tabstop=4 softtabstop=4
+set shiftwidth=4
 set expandtab
+set smartindent
 
-" Use Neovim's default register for yanking
-set clipboard=unnamed
+" Installing plugins 
+" call plug#begin('~/.local/share/nvim/site/autoload')
+call plug#begin('~/.vim/autoload')
+" Fuzzy Finder
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-" Map a key combination to copy selected lines to the system clipboard
-nnoremap <leader>y "+y
+" Ayu-vim color scheme
+Plug 'ayu-theme/ayu-vim'
+call plug#end()
+
+set termguicolors     " enable true colors support
+" let ayucolor="light"  " for light version of theme
+" let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+colorscheme ayu
+
+" Mapping leader key
+let mapleader = " "
+
+" remapping the leader pv instead of Vex<CR>
+nnoremap <leader>pv :Vex<CR>
+
+" breaking up the above line
+" n -> it represent the mode i.e. "i, v, c, t"
+" nore -> no recursive execution
+" map <leader>pv :Vex<CR> -> mapping the right side key to left side
+
+nnoremap <leader><CR> :so ~/.config/nvim/init.vim<CR>
+
+" so = source
+" % = current file
+" :so % -> source current file
+
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>pf :Files<CR>
 
