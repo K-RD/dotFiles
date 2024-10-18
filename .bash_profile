@@ -10,6 +10,12 @@ export PATH="/opt/homebrew/opt/coreutils/libexec/gnubin:$PATH"
 # script from coding garden or https://github.com/w3cj/dotfiles/blob/master/.bash_profile
 HOST_NAME=stable
 
+# ignore command preceded by space char
+# export HISTCONTROL=ignorespace
+
+# ignore both 1) don't put duplicate lines and 2) lines starting with space in the history. 
+export HISTCONTROL=ignoreboth
+
 source /opt/homebrew/opt/nvm/nvm.sh
 # uncomment below line to print nvm version
 # nvm use stable
@@ -18,6 +24,8 @@ shopt -s histappend
 
 export PATH=$PATH:$HOME/bin
 
+# Exporting the path of sqlite
+export PATH="/opt/homebrew/opt/sqlite/bin:$PATH"
 export HISTSIZE=5000
 export HISTFILESIZE=10000
 
@@ -33,8 +41,9 @@ bldgrn='\e[1;32m' # Bold Green
 bldpur='\e[1;35m' # Bold Purple
 txtrst='\e[0m'    # Text Reset
 
+emojis=("💀" "☠️" "🤡" "😵" "" "🌵")
 # emojis=("👾" "🌐" "🎲" "🌍" "🐉" "🌵")
-emojis=("Hii" "Hello" "Singh" "Miss" "Yrr" "Ji")
+# emojis=("Hii" "Hello" "Singh" "Miss" "Yrr" "Ji")
 
 EMOJI=${emojis[$RANDOM % ${#emojis[@]} ]}
 
@@ -94,6 +103,63 @@ function c() {
     gcc-13 "$filename" -o "${filename%.*}" && "./${filename%.*}"
 }
 
+# funtion to rename file to camelCase format.
+ccc() {
+    # Check if the file exists
+    if [[ -z "$1" ]]; then
+        echo "Usage: ccc <filename>"
+        return 1
+    fi
+
+    # Extract the file name and extension separately
+    file="$1"
+    base_name=$(basename "$file" | sed -E 's/\.[^.]+$//')  # Get the name without extension
+    extension="${file##*.}"  # Get the extension
+
+    # Convert base name to CamelCase (first word lower, others capitalized)
+    camel_case=$(echo "$base_name" | sed -E 's/[^a-zA-Z0-9]+/ /g' | tr ' ' '\n' | awk 'NR==1{print tolower($0)} NR>1{print toupper(substr($0,1,1)) tolower(substr($0,2))}' | tr -d '\n')
+
+    # Append the extension if it exists
+    if [[ "$extension" != "$base_name" ]]; then
+        new_file="${camel_case}.${extension}"
+    else
+        new_file="$camel_case"
+    fi
+
+    # Rename the file
+    mv "$file" "$new_file"
+    echo "Renamed '$file' to '$new_file'"
+}
+
+# Function to rename a file in underscore format
+to_underscore() {
+    # Check if the file exists
+    if [[ -z "$1" ]]; then
+        echo "Usage: to_underscore <filename>"
+        return 1
+    fi
+
+    # Extract the file name and extension separately
+    file="$1"
+    base_name=$(basename "$file" | sed -E 's/\.[^.]+$//')  # Get the name without extension
+    extension="${file##*.}"  # Get the extension
+
+    # Convert base name to underscore-separated
+    underscore_name=$(echo "$base_name" | sed -E 's/[^a-zA-Z0-9]+/_/g' | tr '[:upper:]' '[:lower:]')
+
+    # Append the extension if it exists
+    if [[ "$extension" != "$base_name" ]]; then
+        new_file="${underscore_name}.${extension}"
+    else
+        new_file="$underscore_name"
+    fi
+
+    # Rename the file
+    mv "$file" "$new_file"
+    echo "Renamed '$file' to '$new_file'"
+}
+
+
 # Shells
 alias tobash="chsh -s /opt/homebrew/bin/bash"
 alias tozsh="chsh -s /bin/zsh"
@@ -109,6 +175,7 @@ alias dsa='cd /Users/stable/developer/c/DSA-Practice'
 alias lc='cd /Users/stable/developer/c/DSA-Practice/leetcode'
 alias dw="cd ~/Downloads"
 alias dv="cd ~/developer"
+alias vim='nvim'
 #alias cpp="g++-13 --std=c++20"
 
 # -------
@@ -127,8 +194,9 @@ alias nr='npm run'
 alias run='npm run'
 alias nis='npm i -S'
 alias l="ls" # List files in current directory
-alias ll="ls -al" # List all files in current directory in long list format
-alias la="ls -a" #Lists all files in current directory in multiple column format 
+alias ll="ls -lsAh" #List all files in current directory in long list format
+alias lll="ls -lsAh | lolcat" #List all files in current directory in long list format
+alias la="ls -A" #Lists all files in current directory in multiple column format 
 alias o="open ." # Open the current directory in Finder
 # alias tree="find . -print | sed -e 's;[^/]*/;|____;g;s;____|; |;g'"
 # alias dw="cd ~/Downloads"
